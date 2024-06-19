@@ -1,0 +1,47 @@
+.galleria-main{
+    height: 100vh;
+}
+.galleria-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+    height: 70px;
+    background: url("../../resources/topography.svg");
+    letter-spacing: 40px;
+    text-indent: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+}
+
+.card {
+    background-image: url("../../resources/pexels-catiamatos-1072179.jpg");
+    background-size: cover;
+    transition: all 0.3s ease-in-out;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+.card:hover {
+    flex-grow: 6;
+}
+
+.heading{
+    color: white;
+    font-family: 'Bebas Neue Book';
+    font-size: 35px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover .heading{
+    letter-spacing: 40px;
+    text-indent: 40px;
+    font-size: 80px;
+}

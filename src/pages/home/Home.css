@@ -1,0 +1,202 @@
+:root{
+    --dark-bg: "";
+    --dark-text: "";
+    --dark-logo: "";
+}
+
+.home-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: url("../../resources/topography.svg");
+    
+}
+
+.home-logo{
+    height: 60px;
+    aspect-ratio: 5/2;
+    padding: 20px;
+    mix-blend-mode: darken;
+}
+
+.home-nav{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.home-nav li{
+    padding: 20px;
+    padding-right: 40px;
+    font-size: 18px;
+    transition: .3s;
+    text-align: center;
+}
+
+.home-nav li:hover{
+    font-weight: 500;
+    cursor: default;
+}
+
+.home-intro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.home-intro-text{
+    font-family: 'darkline';
+    text-align: center;
+    font-size: 80px;
+    line-height: 60px;
+    width: 50%
+}
+
+.home-intro-text span{
+    font-family: 'Montserrat';
+    font-size: 25px;
+    width: 100%;
+}
+
+.home-spline{
+    aspect-ratio: 16/9;
+    width: 40%;
+}
+
+.home-work{
+    padding: 30px
+}
+
+.work-heading{
+    text-align: center;
+    font-family: "Bebas Neue";
+    font-size: 90px;
+    line-height: 30px;
+}
+
+.work-heading span{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.work-grid{
+    display: grid;
+    grid-template-rows: repeat(12, 100px);
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.over{
+    overflow: hidden;
+    position: relative;
+}
+
+.item-1{
+  grid-column: span 2;
+  grid-row: span 6;
+  border-radius: 10px;
+}
+
+.item-2{
+  grid-column: span 3;
+  grid-row: span 3;
+  border-radius: 10px;
+}
+
+.item-3{
+    grid-column: span 2;
+    grid-row: span 7;
+    border-radius: 10px;
+}
+
+.item-4{
+    grid-column: span 3;
+    grid-row: span 3;
+    border-radius: 10px;
+}
+
+.item-5{
+    grid-column: span 5;
+    grid-row: span 4;
+    border-radius: 10px;
+}
+
+.item-6{
+    grid-column: span 2;
+    grid-row: span 3;
+    border-radius: 10px;
+}
+
+.item-more{
+    grid-column: span 7;
+    grid-row: span 2;
+    border-radius: 10px;
+}
+
+.work-image{
+    transition: .5s;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: .5s;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    color: white;
+    font-family: 'Bebas Neue Book';
+    font-size: 40px;
+}
+
+.overlay-more{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    opacity: 1;
+    transition: .5s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 40px;
+}
+
+.outline-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    color: rgb(0, 0, 0, 0);
+    -webkit-text-stroke: 1px white;
+    transition: .5s;
+}
+
+.overlay div{
+    padding: 20px;
+}
+
+.overlay-more div{
+    padding: 20px;
+}
+
+.over:hover div{
+    opacity: 1;
+}
+
+.over:hover .outline-text{
+    color:rgb(255, 255, 255);
+}
+
+.over:hover img{
+    transform: scale(1.1);
+}
