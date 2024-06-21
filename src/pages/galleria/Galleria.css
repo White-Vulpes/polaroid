@@ -1,6 +1,7 @@
 .galleria-main{
     height: 100vh;
 }
+
 .galleria-header{
     display: flex;
     align-items: center;
@@ -16,11 +17,11 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 70px);
+    height: calc(100vh);
 }
 
 .card {
-    background-image: url("../../resources/pexels-catiamatos-1072179.jpg");
+    background-image: url("https://picsum.photos/4000/1000");
     background-size: cover;
     transition: all 0.3s ease-in-out;
     flex: 1;

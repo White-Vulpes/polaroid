@@ -3,9 +3,9 @@ import './Galleria.css';
 function Galleria() {
     return(
         <div className='galleria-main'>
-            <div className='galleria-header'>
+            {/* <div className='galleria-header'>
                 GALLERIA
-            </div>
+            </div> */}
             <div class="container">
                 <div class="card">
                     <div className='heading'>Nature</div>

@@ -54,6 +54,10 @@ function Home() {
         }
     };
 
+    const openInNewTab = (url) => {
+        window.open(url);
+    };
+
     return (
         <div className="home-container">
             <div className='home-header'>
@@ -105,7 +109,7 @@ function Home() {
                         </div>
                         <div className='item-more over'>
                             <img src={image} alt="more" className='work-image' style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
-                            <div className='overlay-more'>
+                            <div className='overlay-more' onClick={() => openInNewTab("/galleria")}>
                                 <div>You still haven't seen my full album<br/>
                                     <span style={{fontFamily: 'Bebas Neue Book', fontSize: "25px", paddingLeft: "5px"}}>Please Visit my gallery to see more photos that i have shot</span>
                                 </div>
