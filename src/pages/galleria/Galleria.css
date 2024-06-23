@@ -21,7 +21,6 @@
 }
 
 .card {
-    background-image: url("https://picsum.photos/4000/1000");
     background-size: cover;
     transition: all 0.3s ease-in-out;
     flex: 1;
@@ -45,4 +44,29 @@
     letter-spacing: 40px;
     text-indent: 40px;
     font-size: 80px;
+}
+
+.image-1{
+    background-image: url("https://picsum.photos/id/100/4000/1000");
+}
+.image-2{
+    background-image: url("https://picsum.photos/id/200/4000/1000");
+}
+.image-3{
+    background-image: url("https://picsum.photos/id/300/4000/1000");
+}
+.image-4{
+    background-image: url("https://picsum.photos/id/400/4000/1000");
+}
+.image-5{
+    background-image: url("https://picsum.photos/id/500/4000/1000");
+}
+.image-6{
+    background-image: url("https://picsum.photos/id/600/4000/1000");
+}
+.image-7{
+    background-image: url("https://picsum.photos/id/700/4000/1000");
+}
+.image-8{
+    background-image: url("https://picsum.photos/id/800/4000/1000");
 }
