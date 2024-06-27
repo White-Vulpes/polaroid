@@ -8,13 +8,6 @@
 }
 
 @font-face {
-  font-family: 'homebase';
-  src: url('./resources/homebase.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Bebas Neue Book';
   src: url('./resources/BebasNeue-Book.ttf') format('truetype');
   font-weight: normal;
@@ -43,9 +36,19 @@ body {
   -webkit-font-smoothing: antialiased;
   --c0: #000000;
 	--c1: #ffffff;
-	background: radial-gradient(
-		circle at var(--x, 0) var(--y, 0),
-		var(--gc0, var(--c0)) var(--stop, 0%), 
-		var(--gc1, var(--c1)) 0);
-	background-size: 100vw 100vh
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 3px;  /* Width of the scrollbar */
+  transition: all .5s ease-in-out;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);  /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: black;  /* Color of the scrollbar thumb */
 }

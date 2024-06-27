@@ -1,0 +1,17 @@
+.photo-gallery {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.photo-item {
+    flex: 0 0 auto;
+    margin: 5px;
+}
+
+.photo-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
