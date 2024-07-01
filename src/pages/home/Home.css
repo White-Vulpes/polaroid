@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: url("../../resources/topography.svg");
+    background: url("../../resources/svg/topography.svg");
     
 }
 

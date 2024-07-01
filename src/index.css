@@ -2,28 +2,28 @@
 
 @font-face {
   font-family: 'darkline';
-  src: url('./resources/Darkline.ttf') format('truetype');
+  src: url('./resources/font/Darkline.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Bebas Neue Book';
-  src: url('./resources/BebasNeue-Book.ttf') format('truetype');
+  src: url('./resources/font/BebasNeue-Book.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Bebas Neue Bold';
-  src: url('./resources/BebasNeue-Bold.ttf') format('truetype');
+  src: url('./resources/font/BebasNeue-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Bebas Neue';
-  src: url('./resources/BebasNeue-Regular.ttf') format('truetype');
+  src: url('./resources/font/BebasNeue-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

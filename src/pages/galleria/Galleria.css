@@ -10,8 +10,8 @@
 
 .card {
     width: 100%;
-    background-size: cover;
-    transition: all .4s ease-in-out;
+    background-size: auto;
+    transition: all 400ms ease-in-out !important;
     display: flex;
     flex: 1;
     align-items: center;
@@ -86,10 +86,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../../resources/topography.svg");
+  background-image: url("../../resources/svg/topography.svg");
   background-attachment: fixed;
   padding-bottom: 20px;
 }
+
 
 .album-close{
   position: absolute;

@@ -1,9 +1,9 @@
 import './Home.css';
-import logo from '../../resources/logo.PNG'
+import logo from '../../resources/images/logo.PNG'
 import Spline from '@splinetool/react-spline';
 import React from 'react';
 import Typed from 'typed.js';
-import image from '../../resources/pexels-catiamatos-1072179.jpg'
+import image from '../../resources/images/pexels-catiamatos-1072179.jpg'
 
 function Home() {
 

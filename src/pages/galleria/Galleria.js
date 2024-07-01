@@ -6,6 +6,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { useState } from 'react';
 import { Fullscreen, Slideshow, Zoom } from 'yet-another-react-lightbox/plugins';
 import PhotoAlbum from 'react-photo-album';
+import { } from 'react-icons'
 
 function Galleria() {
 
@@ -34,10 +35,12 @@ function Galleria() {
     const closeAlbum = (e) => {
         let cards = document.querySelectorAll('.card');
         cards.forEach(card => {
-            card.style.flex = "1 1";
-            if(card.style.background === 'none')
-            card.style.background = background;
-            background = "";
+            if(card.style.background === 'none'){
+                card.style.background = background;
+                background = "";
+            } else {
+                card.style.flex = "1";
+            }
         });
         setLoading("");
     }
@@ -109,7 +112,7 @@ function Galleria() {
             let cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 if(card !== e.currentTarget){
-                    card.style.flex = "0";
+                    card.style.flex = "0.001";
                 } else {
                     background = card.style.background;
                     card.style.background = 'none';
