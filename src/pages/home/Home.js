@@ -4,6 +4,14 @@ import Spline from '@splinetool/react-spline';
 import React from 'react';
 import Typed from 'typed.js';
 import image from '../../resources/images/pexels-catiamatos-1072179.jpg'
+import baby from '../../resources/images/Baby.jpg'
+import Jewel from '../../resources/images/Jewel.jpg'
+import belavita from '../../resources/images/belavita.jpg'
+import Model from '../../resources/images/Model.jpg'
+import Product from '../../resources/images/Product.jpg'
+import Wildlife from '../../resources/images/Wildlife.jpg'
+import workSpline from '../../resources/spline/work.splinecode'
+import cameraSpline from '../../resources/spline/polaroid.splinecode'
 
 function Home() {
 
@@ -73,7 +81,7 @@ function Home() {
                     Hey! Ishita Here<br/><span ref={el}></span>
                 </div>
                 <div className='home-spline'>
-                    <Spline scene="https://prod.spline.design/5bJwyxvC60oRtSHb/scene.splinecode" />
+                    <Spline scene={cameraSpline} />
                 </div>
             </div>
             <div className='home-work'>
@@ -84,27 +92,27 @@ function Home() {
                 <div className='home-work-grid'>
                     <div className='work-grid'>
                         <div className='item-1 over'>
-                            <img src="" className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
+                            <img src={Model} className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
                             <div className='overlay'><div>Model Photography</div></div>
                         </div>
                         <div className='item-2 over'>
-                            <img src="" className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
-                            <div className='overlay'><div>Nature Photography</div></div>
+                            <img src={Wildlife} className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
+                            <div className='overlay'><div>Wildlife</div></div>
                         </div>
                         <div className='item-3 over'>
-                            <img src="" className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
+                            <img src={baby} className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
                             <div className='overlay'><div>Baby Photography</div></div>
                         </div>
                         <div className='item-4 over'>
-                            <img src="" className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
+                            <img src={Product} className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
                             <div className='overlay'><div>Product Shoot</div></div>
                         </div>
                         <div className='item-5 over'>
-                            <img src="" className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
+                            <img src={Jewel} className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
                             <div className='overlay'><div>Jewellery Photography</div></div>
                         </div>
                         <div className='item-6 over'>
-                            <img src="" className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
+                            <img src={belavita} className='work-image' alt="model" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}></img>
                             <div className='overlay'><div>Bellavita</div></div>
                         </div>
                         <div className='item-more over'>
@@ -114,6 +122,35 @@ function Home() {
                                     <span style={{fontFamily: 'Bebas Neue Book', fontSize: "25px", paddingLeft: "5px"}}>Please Visit my gallery to see more photos that i have shot</span>
                                 </div>
                                 <div className='outline-text'>CLICK ME!!!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='book-a-shoot'>
+                <div className='book-intro'>
+                    <div className='book-heading'>Book a shoot with me</div>
+                    <div className='book-sub'>Snap into fun – let's make magic with my camera!</div>
+                </div>
+                <div className='book-container'>
+                    <div className='book-spline'>
+                        <Spline className="splineTag" scene={workSpline}/>
+                    </div>
+                    <div className='book-form'>
+                        <div className='book-form-container'>
+                            <div className='form-input'>
+                                <div className='name'>
+                                    <label className='name-label'>Your good name, If I may</label>
+                                    <input className='form-input-name'/>
+                                </div>
+                                <div className='mail'>
+                                    <label className='mail-label'>And your Mail ID, Sire!!</label>
+                                    <input className='form-input-mail'/>
+                                </div>
+                                <div className='content'>
+                                    <label className='content-label'>Hope a new project awaits me!</label>
+                                    <textarea className='form-input-content'/>
+                                </div>
                             </div>
                         </div>
                     </div>

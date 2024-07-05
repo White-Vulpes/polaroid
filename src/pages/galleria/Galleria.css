@@ -10,7 +10,7 @@
 
 .card {
     width: 100%;
-    background-size: auto;
+    background-size: cover;
     transition: all 400ms ease-in-out !important;
     display: flex;
     flex: 1;
@@ -31,38 +31,41 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
     mix-blend-mode: difference;
+    backdrop-filter: blur(2px);
 }
 
 .card:hover .heading{
     letter-spacing: 40px;
     text-indent: 40px;
     font-size: 80px;
+    backdrop-filter: blur(0px);
 }
 
 .image-1{
-    background-image: url("https://picsum.photos/id/100/4000/1000");
+    background-image: url("../../resources/images/nature-cat.jpg");
 }
 .image-2{
-    background-image: url("https://picsum.photos/id/200/4000/1000");
+    background-image: url("../../resources/images/baby-cat.jpg");
 }
 .image-3{
-    background-image: url("https://picsum.photos/id/300/4000/1000");
+    background-image: url("../../resources/images/model-cat.jpg");
 }
 .image-4{
-    background-image: url("https://picsum.photos/id/400/4000/1000");
+    background-image: url("../../resources/images/product-cat.jpg");
 }
 .image-5{
-    background-image: url("https://picsum.photos/id/500/4000/1000");
+    background-image: url("../../resources/images/jewel_cat.jpg");
 }
 .image-6{
-    background-image: url("https://picsum.photos/id/600/4000/1000");
+    background-image: url("../../resources/images/fashion_cat.jpg");
 }
 .image-7{
-    background-image: url("https://picsum.photos/id/700/4000/1000");
+    background-image: url("../../resources/images/maternity_cat.jpg");
 }
 .image-8{
-    background-image: url("https://picsum.photos/id/800/4000/1000");
+    background-image: url("../../resources/images/monument-cat.jpg");
 }
 
 .hide{

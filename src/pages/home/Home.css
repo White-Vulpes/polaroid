@@ -200,3 +200,122 @@
 .over:hover img{
     transform: scale(1.1);
 }
+
+.book-intro{
+    padding-left: 50px;
+}
+
+.book-heading{
+    font-family: 'Bebas Neue';
+    font-size: 90px;
+}
+
+.book-sub{
+    font-family: 'Bebas Neue Book';
+    font-size: 20px;
+}
+
+.book-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.book-spline{
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+.book-form{
+    box-shadow: 0px 0px 200px -100px black;
+    padding: 40px;
+    border-radius: 30px;
+    width: 500px;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form-input div{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input label{
+    padding-bottom: 7px;
+    font-size: 20px;
+    font-family: 'Bebas Neue';
+    transition: all .3s ease-in-out;
+    color: black;
+}
+
+.form-input-name, .form-input-mail, .form-input-content{
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Montserrat';
+    transition: border .3s ease-in-out;
+    border: 2px solid black; 
+    border-radius: 3px; 
+    outline: none;
+}
+
+.form-input-content{
+    height: 150px;
+    resize: none;
+}
+
+.form-input-name:active{
+    border-color: #ffa6cb;
+}
+
+.form-input-name:hover{
+    border-color: #ffa6cb;
+}
+
+.form-input-name:focus{
+    border-color: #ffa6cb;
+}
+
+.name:focus-within .name-label{
+    color: #ffa6cb;
+}
+
+.form-input-mail:active{
+    border-color: #ffa6cb;
+}
+
+.form-input-mail:hover{
+    border-color: #ffa6cb;
+}
+
+.form-input-mail:focus{
+    border-color: #ffa6cb;
+}
+
+.mail:focus-within .mail-label{
+    color: #ffa6cb;
+}
+
+.form-input-content:active{
+    border-color: #ffa6cb;
+}
+
+.form-input-content:hover{
+    border-color: #ffa6cb;
+}
+
+.form-input-content:focus{
+    border-color: #ffa6cb;
+}
+
+.content:focus-within .content-label{
+    color: #ffa6cb;
+}
