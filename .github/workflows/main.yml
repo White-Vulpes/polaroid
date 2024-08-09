@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -23,6 +23,9 @@ jobs:
 
       - name: Build the React app
         run: npm run build
+
+      - name: Create CNAME file
+        run: echo 'your-custom-domain.com' > ./build/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
