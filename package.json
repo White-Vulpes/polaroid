@@ -2,6 +2,7 @@
   "name": "polaroid",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://white-vulpes.github.io/polaroid",
   "dependencies": {
     "@splinetool/react-spline": "^3.1.0",
     "@splinetool/runtime": "^1.9.5",
@@ -19,12 +20,6 @@
     "typed.js": "^2.1.0",
     "web-vitals": "^2.1.4",
     "yet-another-react-lightbox": "^3.20.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
