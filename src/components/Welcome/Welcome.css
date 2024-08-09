@@ -15,6 +15,7 @@
 }
 
 .welcome-svg{
+    padding-bottom: 30px;
     fill: none;
     width: 100%;
 }
@@ -33,11 +34,11 @@
 }
 
 .welcome-subline{
-    font-family: 'Bebas Neue';
-    font-size: 60px;
+    font-family: 'Bebas Neue Book';
+    font-size: 6vw;
+    letter-spacing: 3vw;
+    text-indent: 3vw;
     color: white;
-    letter-spacing: 40px;
-    text-indent: 40px;
     opacity: 0;
     animation: reveal 1s ease-in-out forwards;
     animation-delay: 5s;
@@ -53,5 +54,6 @@
     to {
         opacity: 0;
         display: none;
+        visibility: hidden;
     }
 }

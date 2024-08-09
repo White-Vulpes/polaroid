@@ -33,14 +33,12 @@
     height: 100%;
     width: 100%;
     mix-blend-mode: difference;
-    backdrop-filter: blur(2px);
 }
 
 .card:hover .heading{
     letter-spacing: 40px;
     text-indent: 40px;
     font-size: 80px;
-    backdrop-filter: blur(0px);
 }
 
 .image-1{
@@ -77,10 +75,12 @@
   font-size: 60px;
   letter-spacing: 40px;
   text-indent: 40px;
-  padding: 20px;
-  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -96,7 +96,7 @@
 
 
 .album-close{
-  position: absolute;
+  position: relative;
   right: 0;
   color: rgb(0, 0, 0, 0);
   -webkit-text-stroke: 1px black;
@@ -109,7 +109,7 @@
 
 .album-slideshow{
   font-family: 'Bebas Neue';
-  font-size: 40px;
+  font-size: 35px;
   padding: 20px;
   background-color: rgb(255, 183, 0);
   display: flex;

@@ -1,0 +1,21 @@
+@media only screen and (max-width: 600px) {
+    .card:hover{
+        flex: 1 !important;
+    }
+
+    .card:hover .heading{
+        letter-spacing: unset;
+        text-indent: unset;
+        font-size: unset;
+    }
+
+    .album-heading{
+        font-size: 50px;
+        letter-spacing: 10px;
+        text-indent: 10px;
+    }
+    
+    .album-slideshow{
+        font-size: 25px;
+    }
+}

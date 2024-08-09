@@ -1,34 +1,26 @@
 import './Galleria.css';
+import './Galleria-media.css'
 import Welcome from '../../components/Welcome/Welcome'
 import Lightbox from 'yet-another-react-lightbox';
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Fullscreen, Slideshow, Zoom } from 'yet-another-react-lightbox/plugins';
 import PhotoAlbum from 'react-photo-album';
-import { } from 'react-icons'
+import Cookies from "js-cookie"
 
 function Galleria() {
 
     const [loading, setLoading] = useState("");
-    const [data, setData] = useState(null);
     const [index, setIndex] = useState(-1);
+    const [photos, setPhotos] = useState(null)
+    const [thumbnails, setThumbnailPhotos] = useState(null)
 
-    const photos = [
-        {src: "https://picsum.photos/200/300", width: 200, height: 300},
-        {src: "https://picsum.photos/1920/1080", width: 1920, height: 1080},
-        {src: "https://picsum.photos/400/300", width: 400, height: 300},
-        {src: "https://picsum.photos/1600/900", width: 1600, height: 900},
-        {src: "https://picsum.photos/400/300", width: 400, height: 300},
-        {src: "https://picsum.photos/1920/1080", width: 1920, height: 1080},
-        {src: "https://picsum.photos/200/300", width: 200, height: 300},
-        {src: "https://picsum.photos/1600/900", width: 1600, height: 900},
-        {src: "https://picsum.photos/400/300", width: 400, height: 300},
-        {src: "https://picsum.photos/1920/1080", width: 1920, height: 1080},
-        {src: "https://picsum.photos/1600/900", width: 1600, height: 900},
-        {src: "https://picsum.photos/1920/1080", width: 1920, height: 1080},
-        {src: "https://picsum.photos/200/300", width: 200, height: 300},
-    ];
+    useEffect(() => {
+        if (Cookies.get('getWelcomeShown') === undefined) {
+            Cookies.set('getWelcomeShown', 'false');
+        }
+    }, []);
 
     let background = "";
 
@@ -76,7 +68,7 @@ function Galleria() {
                             <div className='album-outline-text'>CLICK ME!!</div>
                         </div>
                         <div className='album-photo'>
-                            <PhotoAlbum photos={photos} layout='rows' onClick={({ index }) => setIndex(index)} />
+                            <PhotoAlbum photos={thumbnails} layout='rows' onClick={({ index }) => setIndex(index)} />
                             <Lightbox
                                 slides={photos}
                                 open={index >= 0}
@@ -93,12 +85,29 @@ function Galleria() {
     }
 
     const fetchData = async (category) => {
-        console.log(data);
         setLoading(category);
         try {
-            const response = await fetch('https://httpbin.org/delay/3');
-            const result = await response.json();
-            setData(result);
+            const response = await fetch('https://sb18ca0v12.execute-api.eu-north-1.amazonaws.com/dev/foldernames', {
+                method: 'POST',
+                body: JSON.stringify({
+                    "bucket_name": "polaroidfiles",
+                    "folder_name": category
+                }),
+                headers:{
+                    "Content-Type": "application/json" 
+                }
+            });
+            let result = await response.json();
+            result = JSON.parse(result.body)
+            let photosX = []
+            let thumb = []
+            for(let item in result){
+                if (result[item].width != null)
+                    photosX.push({src: "https://dg2h7a60hb825.cloudfront.net/" + category + "/" + result[item].file_name});
+                    thumb.push({src: "https://dg2h7a60hb825.cloudfront.net/THUMBNAIL/" + category + "_THUMBNAIL_" + result[item].file_name, width: parseInt(result[item].width), height: parseInt(result[item].height)})
+            }
+            setThumbnailPhotos(thumb)
+            setPhotos(photosX)
         } catch (e) {
             console.error(e);
         } finally {
@@ -112,7 +121,7 @@ function Galleria() {
             let cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 if(card !== e.currentTarget){
-                    card.style.flex = "0.001";
+                    card.style.flex = "0.000";
                 } else {
                     background = card.style.background;
                     card.style.background = 'none';
@@ -125,32 +134,35 @@ function Galleria() {
     return(
         <div className='galleria-main'>
             <div className='galleria-welcome'>
-                <Welcome/>
+                {Cookies.get('getWelcomeShown')?<></>:<Welcome/>}
             </div>
             <div className="container">
-                <div className="card image-1" onClick={(event) => handleOnClick(event, 'nature')}>
-                    <Loading id="nature" />
+                <div className="card image-1" onClick={(event) => handleOnClick(event, 'NATURE')}>
+                    <Loading id="NATURE" />
                 </div>
-                <div className="card image-2" onClick={(event) => handleOnClick(event, 'baby')}>
-                    <Loading id="baby" />
+                <div className="card image-2" onClick={(event) => handleOnClick(event, 'BABY')}>
+                    <Loading id="BABY" />
                 </div>
-                <div className="card image-3" onClick={(event) => handleOnClick(event, 'model')}>
-                    <Loading id="model" />
+                <div className="card image-3" onClick={(event) => handleOnClick(event, 'INTERIOR')}>
+                    <Loading id="INTERIOR" />
                 </div>
-                <div className="card image-4" onClick={(event) => handleOnClick(event, 'product')}>
-                    <Loading id="product" />
+                <div className="card image-4" onClick={(event) => handleOnClick(event, 'PRODUCT')}>
+                    <Loading id="PRODUCT" />
                 </div>
-                <div className="card image-5" onClick={(event) => handleOnClick(event, 'jewellery')}>
-                    <Loading id="jewellery" />
+                <div className="card image-5" onClick={(event) => handleOnClick(event, 'JEWELLERY')}>
+                    <Loading id="JEWELLERY" />
                 </div>
-                <div className="card image-6" onClick={(event) => handleOnClick(event, 'fashion')}>
-                    <Loading id="fashion" />
+                <div className="card image-6" onClick={(event) => handleOnClick(event, 'FASHION')}>
+                    <Loading id="FASHION" />
                 </div>
-                <div className="card image-7" onClick={(event) => handleOnClick(event, 'maternity')}>
-                    <Loading id="maternity" />
+                <div className="card image-7" onClick={(event) => handleOnClick(event, 'MATERNITY')}>
+                    <Loading id="MATERNITY" />
                 </div>
-                <div className="card image-8" onClick={(event) => handleOnClick(event, 'monument')}>
-                    <Loading id="monument" />
+                <div className="card image-8" onClick={(event) => handleOnClick(event, 'MONUMENT')}>
+                    <Loading id="MONUMENT" />
+                </div>
+                <div className="card image-8" onClick={(event) => handleOnClick(event, 'MODEL')}>
+                    <Loading id="MODEL" />
                 </div>
             </div>
         </div>

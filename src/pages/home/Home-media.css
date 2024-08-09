@@ -1,0 +1,164 @@
+@media only screen and (max-width: 600px) {
+    :root {
+        --heading-font: 3.6rem;
+        --sub-heading: 1.1rem;
+        --icon-size: 65px;
+    }
+
+    .home-nav{
+        display: none;
+        position: fixed;
+        left: 100vw;
+        width: 100%;
+        height: 100%;
+        font-family: 'Montserrat';
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        flex-direction: column;
+        margin-block-start: unset;
+        margin-block-end: unset;
+        padding-inline-start: unset;
+    }
+
+    .home-nav li{
+        padding: 50px;
+        font-size: 30px;
+        font-family: 'Montserrat';
+        transition: .3s;
+    }
+
+    .home-nav-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .home-intro{
+        flex-direction: column-reverse;
+    }
+
+    .home-intro-text{
+        width: 100%;
+        font-size: 60px;
+    }
+
+    .home-intro-text span{
+        font-size: 15px;
+    }
+
+    .home-spline{
+        width: 100%;
+    }
+
+    .home-work{
+        padding: 10px
+    }
+
+    .work-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: repeat(22, 100px);
+        padding: 5px;
+        padding-top: 40px;
+    }
+
+    .item-1{
+        grid-row: 5 span;
+        grid-column: unset;
+    }
+    
+    .item-2{
+        grid-row: 2 span;
+        grid-column: unset;
+    }
+    
+    .item-3{
+        grid-row: 5 span;
+        grid-column: unset;
+    }
+    
+    .item-4{
+        grid-row: 2 span;
+        grid-column: unset;
+    }
+    
+    .item-5{
+        grid-row: 2 span;
+        grid-column: unset;
+    }
+    
+    .item-6{
+        grid-row: 4 span;
+        grid-column: unset;
+    }
+    
+    .item-more{
+        grid-row: 2 span;
+        grid-column: unset;
+    }
+
+    .more{
+        font-size: 2.2rem;
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .more span{
+        display: none;
+    }
+
+    .outline-text {
+        font-size: 60px;
+    }
+
+    .book-intro{
+        text-align: center;
+        padding-left: 0px;
+        margin: 20px;
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .book-container{
+        flex-direction: column;
+        min-height: 85vh;
+    }
+    
+    .book-spline{
+        aspect-ratio: unset;
+        width: 410px;
+        height: 600px;
+    }
+
+    .items{
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .tip-container{
+        margin-top: 40px;
+    }
+
+    .tip-menu-custom{
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .custom-input{
+        padding-top: 10px;
+    }
+
+    .custom-item{
+        margin-right: 0px;
+        height: 120px;
+        width: 100%;
+    }
+
+    .pay-button-container{
+        padding-top: 20px;
+        width: 100%;
+        margin-right: 0px;
+    }
+}

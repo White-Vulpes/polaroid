@@ -15,13 +15,6 @@
 }
 
 @font-face {
-  font-family: 'Bebas Neue Bold';
-  src: url('./resources/font/BebasNeue-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Bebas Neue';
   src: url('./resources/font/BebasNeue-Regular.ttf') format('truetype');
   font-weight: normal;
@@ -29,6 +22,7 @@
 }
 
 body {
+  user-select: none;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -38,17 +32,16 @@ body {
 	--c1: #ffffff;
 }
 
-/* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 3px;  /* Width of the scrollbar */
+  width: 3px;
   transition: all .5s ease-in-out;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(255, 255, 255);  /* Background color of the scrollbar track */
+  background: rgb(255, 255, 255);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: black;  /* Color of the scrollbar thumb */
+  background: black;
 }

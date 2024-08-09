@@ -1,28 +1,32 @@
-:root{
-    --dark-bg: "";
-    --dark-text: "";
-    --dark-logo: "";
+:root {
+    --heading-font: 90px;
+    --heading-font-media: 90px;
+    --sub-heading: 20px;
+    --sub-heading-media: 20px;
+    --box-shadow-value: 0px 0px 20px -10px black;
+    --icon-size: 70px;
 }
 
 .home-header{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     background: url("../../resources/svg/topography.svg");
-    
 }
 
 .home-logo{
     height: 60px;
-    aspect-ratio: 5/2;
+    width: 150px;
     padding: 20px;
     mix-blend-mode: darken;
 }
 
 .home-nav{
     display: flex;
-    flex-direction: row;
     list-style-type: none;
+}
+
+.home-nav-mobile{
+    display: none
 }
 
 .home-nav li{
@@ -30,28 +34,27 @@
     padding-right: 40px;
     font-size: 18px;
     transition: .3s;
-    text-align: center;
 }
 
 .home-nav li:hover{
     font-weight: 500;
-    cursor: default;
+    cursor: pointer;
 }
 
 .home-intro{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 85vh;
 }
 
 .home-intro-text{
-    font-family: 'darkline';
+    /*TODO: FONT TO BE CHANGED */
+    font-family: 'darkline'; 
     text-align: center;
     font-size: 80px;
     line-height: 60px;
-    width: 50%
+    width: 50%;
 }
 
 .home-intro-text span{
@@ -65,19 +68,19 @@
     width: 40%;
 }
 
-.home-work{
-    padding: 30px
+.home-spline-mobile{
+    display: none;
 }
 
 .work-heading{
     text-align: center;
     font-family: "Bebas Neue";
-    font-size: 90px;
+    font-size: var(--heading-font);
     line-height: 30px;
 }
 
 .work-heading span{
-    font-size: 20px;
+    font-size: var(--sub-heading);
     font-weight: 300;
 }
 
@@ -92,52 +95,49 @@
 .over{
     overflow: hidden;
     position: relative;
+    border-radius: 10px;
 }
 
 .item-1{
-  grid-column: span 2;
-  grid-row: span 6;
-  border-radius: 10px;
+    grid-column: span 2;
+    grid-row: span 6;
 }
 
 .item-2{
-  grid-column: span 3;
-  grid-row: span 3;
-  border-radius: 10px;
+    grid-column: span 3;
+    grid-row: span 3;
 }
 
 .item-3{
     grid-column: span 2;
     grid-row: span 7;
-    border-radius: 10px;
 }
 
 .item-4{
     grid-column: span 3;
     grid-row: span 3;
-    border-radius: 10px;
 }
 
 .item-5{
     grid-column: span 5;
     grid-row: span 4;
-    border-radius: 10px;
 }
 
 .item-6{
     grid-column: span 2;
     grid-row: span 3;
-    border-radius: 10px;
 }
 
 .item-more{
     grid-column: span 7;
     grid-row: span 2;
-    border-radius: 10px;
 }
 
 .work-image{
     transition: .5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .overlay{
@@ -149,28 +149,17 @@
     opacity: 0;
     transition: .5s;
     display: flex;
-    flex-direction: row;
     align-items: end;
     color: white;
     font-family: 'Bebas Neue Book';
     font-size: 40px;
 }
 
-.overlay-more{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    opacity: 1;
-    transition: .5s;
-    display: flex;
+.more {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    color: white;
-    font-family: 'Bebas Neue';
-    font-size: 40px;
+    opacity: 1;
 }
 
 .outline-text {
@@ -182,10 +171,6 @@
 }
 
 .overlay div{
-    padding: 20px;
-}
-
-.overlay-more div{
     padding: 20px;
 }
 
@@ -202,44 +187,57 @@
 }
 
 .book-intro{
+    margin-top: 100px;
     padding-left: 50px;
 }
 
 .book-heading{
     font-family: 'Bebas Neue';
-    font-size: 90px;
+    font-size: var(--heading-font);
 }
 
 .book-sub{
     font-family: 'Bebas Neue Book';
-    font-size: 20px;
+    font-size: var(--sub-heading);
 }
 
 .book-container{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    height: 90vh;
+    min-height: 85vh;
+    width: 100%;
 }
 
 .book-spline{
-    width: 800px;
-    display: flex;
-    justify-content: center;
+    aspect-ratio: 16/9;
+    width: 830px;
 }
 
 .book-form{
-    box-shadow: 0px 0px 200px -100px black;
-    padding: 40px;
+    box-shadow: var(--box-shadow-value);
+    padding: 30px;
     border-radius: 30px;
-    width: 500px;
+    width: 80%;
+    max-width: 450px;
+    min-width: 320px;
 }
 
 .form-input{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.form-button-submit{
+    height: 40px;
+    outline: none;
+    background-color: #7567e5;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    color: white
 }
 
 .form-input div{
@@ -319,3 +317,353 @@
 .content:focus-within .content-label{
     color: #ffa6cb;
 }
+
+.tip-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+}
+
+.tip-intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tip-heading{
+    text-align: center;
+    font-family: "Bebas Neue";
+    font-size: var(--heading-font);
+}
+
+.tip-sub{
+    font-size: var(--sub-heading);
+    font-weight: 300;
+    font-family: "Bebas Neue Book";
+}
+
+.tip-menu-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.items{
+    box-shadow: var(--box-shadow-value);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 40px;
+    height: 120px;
+    max-width: 120px;
+    min-width: 80px;
+    transition: all 0.3s ease-in-out;
+}
+
+.items:hover{
+    transform: scale(1.1);
+}
+
+.coffee-icons{
+    width: var(--icon-size);
+    height: var(--icon-size);
+    padding: 10px;
+}
+
+.tip-amount{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tip-menu-custom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+}
+
+.custom-item{
+    outline: none;
+    margin-right: 20px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 500;
+    font-family: 'Montserrat';
+    border: none;
+    padding: 0;
+    padding-left: 80px;
+    border-radius: 40px;
+    box-shadow: var(--box-shadow-value);
+}
+
+.custom-input{
+    display: flex;
+    align-items: center;
+}
+
+.custom-item::placeholder{
+    opacity: .3;
+}
+
+.pay-button-container{    
+    height: 120px; 
+    margin-right: 40px;
+    width: 30%;
+    border-radius: 40px;
+}
+
+.pay-button{
+    box-shadow: var(--box-shadow-value);
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    background-color: #d9ccbc;
+    width: 100%;
+    height: 100%;
+}
+
+.buy-me-tip{
+    padding-top: 100px;
+    margin: 20px;
+}
+/* Footer */
+
+.footer-distributed{
+	background: rgb(255, 255, 255);
+	box-shadow: 0px 0px 200px -80px black;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px 'Montserrat';
+	padding: 25px 45px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+.footer-distributed h4{
+	color:  #000000;
+	font: normal 80px 'Darkline';
+    line-height: 50px;
+    padding-top: 40px;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+.footer-distributed .footer-links{
+	color:  #000000;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links div{
+	display:inline-block;
+    font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+    cursor: pointer;
+}
+
+.footer-distributed{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color: #33383b;
+	color: #000000;
+	font-size: 30px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #000000;
+    font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #000000;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #000000;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #000000;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	font-size: 22px;
+	color: #000000;
+	text-align: center;
+	margin-right: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px 'Montserrat';
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+/* Footer End */
+#checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .5s;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+  }
+  
+  #bar2 {
+    transition-duration: .8s;
+  }
+  
+  #bar1,#bar3 {
+    width: 70%;
+  }
+  
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+  }
+  /* Harburger Ends */
