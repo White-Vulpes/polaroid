@@ -1,17 +1,17 @@
 import './App.css';
 import Home from './pages/home/Home'
 import Galleria from './pages/galleria/Galleria';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="app">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/galleria" element={ <Galleria /> } />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

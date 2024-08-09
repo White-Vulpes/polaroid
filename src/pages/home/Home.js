@@ -72,7 +72,7 @@ function Home() {
                 <ul className='home-nav' ref={toggleMobile}>
                     <li onClick={() => shoot.current.scrollIntoView({behavior: 'smooth'})}>Book a Shoot</li>
                     <li onClick={() => coffee.current.scrollIntoView({behavior: 'smooth'})}>Buy Me Coffee</li>
-                    <li  onClick={() => openInNewTab("/galleria")}>Galleria</li>
+                    <li  onClick={() => openInNewTab("/#/galleria")}>Galleria</li>
                 </ul>
                 <div className='home-nav-mobile'>
                     <input type="checkbox" onClick={(e) => {handleToggle(e)}}  id="checkbox"/>
@@ -124,7 +124,7 @@ function Home() {
                         </div>
                         <div className='item-more over'>
                             <img src={image} alt="more" className='work-image' ></img>
-                            <div className='overlay more' onClick={() => openInNewTab("/galleria")}>
+                            <div className='overlay more' onClick={() => openInNewTab("/#/galleria")}>
                                 <div>You still haven't seen my full album<br/>
                                     <span style={{fontFamily: 'Bebas Neue Book', paddingLeft: "5px"}}>Please Visit my gallery to see more photos that i have shot &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;</span>
                                 </div>
