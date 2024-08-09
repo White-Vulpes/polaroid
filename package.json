@@ -2,7 +2,6 @@
   "name": "polaroid",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://white-vulpes.github.io/",
   "dependencies": {
     "@splinetool/react-spline": "^3.1.0",
     "@splinetool/runtime": "^1.9.5",
