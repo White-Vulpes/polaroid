@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { Fullscreen, Slideshow, Zoom } from 'yet-another-react-lightbox/plugins';
 import PhotoAlbum from 'react-photo-album';
 import Cookies from "js-cookie"
+import { useNavigate } from 'react-router-dom';
 
 function Galleria() {
 
@@ -15,12 +16,24 @@ function Galleria() {
     const [index, setIndex] = useState(-1);
     const [photos, setPhotos] = useState(null)
     const [thumbnails, setThumbnailPhotos] = useState(null)
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (Cookies.get('getWelcomeShown') === undefined) {
             Cookies.set('getWelcomeShown', 'false');
         }
-    }, []);
+
+        const handleBackButton = (event) => {
+            event.preventDefault();
+            document.getElementsByClassName("album-close")[0].click();
+          };
+      
+          window.addEventListener('popstate', handleBackButton);
+      
+          return () => {
+            window.removeEventListener('popstate', handleBackButton);
+          };
+    }, [navigate]);
 
     let background = "";
 
@@ -68,7 +81,9 @@ function Galleria() {
                             <div className='album-outline-text'>CLICK ME!!</div>
                         </div>
                         <div className='album-photo'>
-                            <PhotoAlbum photos={thumbnails} layout='rows' onClick={({ index }) => setIndex(index)} />
+                            <PhotoAlbum photos={thumbnails} layout='columns' spacing={0.5} columns={(columnWidth) => {
+                                if(columnWidth < 600) return 2;
+                            }} onClick={({ index }) => setIndex(index)} />
                             <Lightbox
                                 slides={photos}
                                 open={index >= 0}
