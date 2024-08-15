@@ -154,6 +154,10 @@ function Home() {
                                     <label className='mail-label'>And your Mail ID, Sire!!</label>
                                     <input className='form-input-mail'/>
                                 </div>
+                                <div className='mail'>
+                                    <label className='mail-label'>Phone Number, If you may</label>
+                                    <input className='form-input-mail'/>
+                                </div>
                                 <div className='content'>
                                     <label className='content-label'>Hope a new project awaits me!</label>
                                     <textarea className='form-input-content'/>

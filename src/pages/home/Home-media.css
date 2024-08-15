@@ -59,13 +59,13 @@
     .work-grid{
         display: grid;
         grid-template-columns: repeat(1, 100%);
-        grid-template-rows: repeat(22, 100px);
+        grid-template-rows: repeat(14, 100px);
         padding: 5px;
         padding-top: 40px;
     }
 
     .item-1{
-        grid-row: 5 span;
+        grid-row: 2 span;
         grid-column: unset;
     }
     
@@ -75,7 +75,7 @@
     }
     
     .item-3{
-        grid-row: 5 span;
+        grid-row: 2 span;
         grid-column: unset;
     }
     
@@ -90,7 +90,7 @@
     }
     
     .item-6{
-        grid-row: 4 span;
+        grid-row: 2 span;
         grid-column: unset;
     }
     
@@ -100,7 +100,7 @@
     }
 
     .more{
-        font-size: 2.2rem;
+        font-size: 1.9rem;
         flex-direction: column;
         align-items: unset;
     }
@@ -110,7 +110,7 @@
     }
 
     .outline-text {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .book-intro{
@@ -128,12 +128,12 @@
     
     .book-spline{
         aspect-ratio: unset;
-        width: 410px;
+        width: 380px;
         height: 600px;
     }
 
     .items{
-        padding: 20px;
+        padding: 15px;
         margin: 10px;
     }
 

@@ -216,6 +216,7 @@
 
 .book-form{
     box-shadow: var(--box-shadow-value);
+    margin: 10px;
     padding: 30px;
     border-radius: 30px;
     width: 80%;
