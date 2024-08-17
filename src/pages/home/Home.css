@@ -249,14 +249,14 @@
 
 .form-input label{
     padding-bottom: 7px;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Bebas Neue';
     transition: all .3s ease-in-out;
     color: black;
 }
 
 .form-input-name, .form-input-mail, .form-input-content{
-    height: 40px;
+    height: 30px;
     font-size: 20px;
     padding: 5px;
     font-family: 'Montserrat';

@@ -70,9 +70,18 @@ function Home() {
             <div className='home-header'>
                 <img src={logo} alt="logo" className='home-logo'></img>
                 <ul className='home-nav' ref={toggleMobile}>
-                    <li onClick={() => shoot.current.scrollIntoView({behavior: 'smooth'})}>Book a Shoot</li>
-                    <li onClick={() => coffee.current.scrollIntoView({behavior: 'smooth'})}>Buy Me Coffee</li>
-                    <li  onClick={() => openInNewTab("/#/galleria")}>Galleria</li>
+                    <li onClick={() => {
+                        shoot.current.scrollIntoView({behavior: 'smooth'})
+                        document.getElementById('checkbox').click()
+                    }}>Book a Shoot</li>
+                    <li onClick={() => {
+                        coffee.current.scrollIntoView({behavior: 'smooth'})
+                        document.getElementById('checkbox').click()
+                    }}>Buy Me Coffee</li>
+                    <li  onClick={() => {
+                        openInNewTab("/#/galleria")
+                        document.getElementById('checkbox').click()
+                    }}>Galleria</li>
                 </ul>
                 <div className='home-nav-mobile'>
                     <input type="checkbox" onClick={(e) => {handleToggle(e)}}  id="checkbox"/>

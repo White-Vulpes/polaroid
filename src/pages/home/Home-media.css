@@ -19,6 +19,7 @@
         margin-block-start: unset;
         margin-block-end: unset;
         padding-inline-start: unset;
+        z-index: 1;
     }
 
     .home-nav li{
@@ -30,6 +31,8 @@
 
     .home-nav-mobile{
         display: flex;
+        position: relative;
+        z-index: 1;
         justify-content: center;
         align-items: center;
         padding: 10px;
