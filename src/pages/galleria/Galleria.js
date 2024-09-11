@@ -193,7 +193,7 @@ function Galleria() {
         <div
           className="card image-1"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/WILDLIFE.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/WILDLIFE.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "WILDLIFE")}
         >
@@ -202,7 +202,7 @@ function Galleria() {
         <div
           className="card image-2"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/COMMERCIAL.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/COMMERCIAL.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "COMMERCIAL")}
         >
@@ -211,7 +211,7 @@ function Galleria() {
         <div
           className="card image-3"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/INTERIOR.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/INTERIOR.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "INTERIOR")}
         >
@@ -220,7 +220,7 @@ function Galleria() {
         <div
           className="card image-4"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/PRODUCT.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/PRODUCT.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "PRODUCT")}
         >
@@ -229,7 +229,7 @@ function Galleria() {
         <div
           className="card image-5"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/JEWELLERY.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/JEWELLERY.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "JEWELLERY")}
         >
@@ -238,7 +238,7 @@ function Galleria() {
         <div
           className="card image-6"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/NEW_BORN.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/NEW_BORN.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "NEW_BORN")}
         >
@@ -247,7 +247,7 @@ function Galleria() {
         <div
           className="card image-7"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/MATERNITY.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/MATERNITY.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "MATERNITY")}
         >
@@ -256,7 +256,7 @@ function Galleria() {
         <div
           className="card image-8"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/FASHION.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/FASHION.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "FASHION")}
         >
@@ -265,7 +265,7 @@ function Galleria() {
         <div
           className="card image-8"
           style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/HERO/MÉLANGE.jpg")`,
+            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/MÉLANGE.jpg")`,
           }}
           onClick={(event) => handleOnClick(event, "MÉLANGE")}
         >
