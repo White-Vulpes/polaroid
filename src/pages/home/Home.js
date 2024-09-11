@@ -14,7 +14,6 @@ import Marquee from "react-fast-marquee";
 import Loader from "../../components/Loader/Loader";
 
 function Home() {
-  const el = useRef(null);
   const shoot = useRef(null);
   const toggleMobile = useRef(null);
   const [loading, setLoading] = useState(false);
