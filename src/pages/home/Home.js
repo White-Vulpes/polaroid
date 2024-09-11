@@ -1,6 +1,6 @@
 import "./Home.css";
 import "./Home-media.css";
-import logo from "../../resources/images/logo.png";
+import logo from "../../resources/images/logo.PNG";
 import Spline from "@splinetool/react-spline";
 import React, { useEffect, useState, useRef } from "react";
 import { ReactTyped } from "react-typed";
