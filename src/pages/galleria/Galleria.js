@@ -4,7 +4,7 @@ import Welcome from "../../components/Welcome/Welcome";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   Fullscreen,
   Slideshow,
@@ -38,13 +38,15 @@ function Galleria() {
     };
   }, [navigate]);
 
-  let background = "";
+  let background = useMemo(() => {
+    return "";
+  }, []);
 
   const closeAlbum = (e) => {
     let cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
-      if (card.style.background === "none") {
-        card.style.background = background;
+      if (card.style.backgroundImage === "none") {
+        card.style.backgroundImage = background;
         background = "";
       } else {
         card.style.flex = "1";
@@ -176,8 +178,8 @@ function Galleria() {
         if (card !== e.currentTarget) {
           card.style.flex = "0.000";
         } else {
-          background = card.style.background;
-          card.style.background = "none";
+          background = card.style.backgroundImage;
+          card.style.backgroundImage = "none";
         }
       });
       fetchData(id);
@@ -192,81 +194,54 @@ function Galleria() {
       <div className="container">
         <div
           className="card image-1"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/WILDLIFE.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "WILDLIFE")}
         >
           <Loading title={"WILDLIFE"} id="WILDLIFE" />
         </div>
         <div
           className="card image-2"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/COMMERCIAL.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "COMMERCIAL")}
         >
           <Loading title={"COMMERCIAL"} id="COMMERCIAL" />
         </div>
         <div
           className="card image-3"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/INTERIOR.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "INTERIOR")}
         >
           <Loading title={"INTERIOR"} id="INTERIOR" />
         </div>
         <div
           className="card image-4"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/PRODUCT.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "PRODUCT")}
         >
           <Loading title={"PRODUCT"} id="PRODUCT" />
         </div>
         <div
           className="card image-5"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/JEWELLERY.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "JEWELLERY")}
         >
           <Loading title={"JEWELLERY"} id="JEWELLERY" />
         </div>
         <div
           className="card image-6"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/NEW_BORN.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "NEW_BORN")}
         >
           <Loading title={"NEW BORN"} id="NEW_BORN" />
         </div>
         <div
           className="card image-7"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/MATERNITY.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "MATERNITY")}
         >
           <Loading title={"MATERNITY"} id="MATERNITY" />
         </div>
         <div
           className="card image-8"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/FASHION.jpg")`,
-          }}
           onClick={(event) => handleOnClick(event, "FASHION")}
         >
           <Loading title={"FASHION"} id="FASHION" />
         </div>
         <div
-          className="card image-8"
-          style={{
-            backgroundImage: `url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/MÉLANGE.jpg")`,
-          }}
+          className="card image-9"
           onClick={(event) => handleOnClick(event, "MÉLANGE")}
         >
           <Loading title={"MÉLANGE"} id="MÉLANGE" />

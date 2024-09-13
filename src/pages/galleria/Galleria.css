@@ -23,6 +23,35 @@
   flex-grow: 6 !important;
 }
 
+.image-1 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/WILDLIFE.jpg");
+}
+
+.image-2 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/COMMERCIAL.jpg");
+}
+.image-3 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/INTERIOR.jpg");
+}
+.image-4 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/PRODUCT.jpg");
+}
+.image-5 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/JEWELLERY.jpg");
+}
+.image-6 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/NEW_BORN.jpg");
+}
+.image-7 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/MATERNITY.jpg");
+}
+.image-8 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/FASHION.jpg");
+}
+.image-9 {
+  background-image: url("https://dg2h7a60hb825.cloudfront.net/CATEGORIES/MÉLANGE.jpg");
+}
+
 .heading {
   color: white;
   font-family: "Bebas Neue Book";
