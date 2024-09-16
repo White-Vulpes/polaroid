@@ -78,6 +78,18 @@ function Home() {
     toggleMobile.current.style.left = "0";
   };
 
+  const openMail = () => {
+    const name = document.getElementsByClassName("form-input-name")[0].value;
+    const mail = document.getElementsByClassName("form-input-mail")[0].value;
+    const phone = document.getElementsByClassName("phone")[0].value;
+    const content =
+      document.getElementsByClassName("form-input-content")[0].value;
+
+    const subject = encodeURI(`I have a project for you, Ishita`);
+    const bd = encodeURI(`${content} \n\n${name}\n${mail}\n${phone}`);
+    window.location = `mailto:ishujphotography@gmail.com?subject=${subject}&body=${bd}`;
+  };
+
   return loading ? (
     <Loader />
   ) : (
@@ -210,7 +222,7 @@ function Home() {
                 </div>
                 <div className="mail">
                   <label className="mail-label">Phone Number, If you may</label>
-                  <input className="form-input-mail" />
+                  <input className="form-input-mail phone" />
                 </div>
                 <div className="content">
                   <label className="content-label">
@@ -219,7 +231,12 @@ function Home() {
                   <textarea className="form-input-content" />
                 </div>
                 <div className="button">
-                  <button className="form-button-submit">
+                  <button
+                    className="form-button-submit"
+                    onClick={() => {
+                      openMail();
+                    }}
+                  >
                     Call a Pigeon 🐦
                   </button>
                 </div>
