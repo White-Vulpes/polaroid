@@ -125,7 +125,7 @@ function Home() {
       </div>
       <div className="home-intro">
         <div className="home-intro-text">
-          Hi! Ishitia Here
+          Hi! Ishita Here
           <br />
           <ReactTyped
             strings={[
