@@ -12,6 +12,8 @@ import Lightbox from "yet-another-react-lightbox";
 import { Zoom } from "yet-another-react-lightbox/plugins";
 import Marquee from "react-fast-marquee";
 import Loader from "../../components/Loader/Loader";
+import eventLog from "../../utils/eventsLogger";
+import { useLocation } from "../../providers/LocationContext";
 
 function Home() {
   const shoot = useRef(null);
@@ -20,6 +22,7 @@ function Home() {
   const [index, setIndex] = useState(-1);
   const [photos, setPhotos] = useState([]);
   const [thumbnails, setThumbnailPhotos] = useState([]);
+  const { location } = useLocation();
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -162,7 +165,7 @@ function Home() {
               spacing={0}
               columns={(columnWidth) => {
                 if (columnWidth < 600) return 2;
-                return 5; // Default to 5 columns if columnWidth is not less than 600
+                return 5;
               }}
             />
           </div>
@@ -179,7 +182,10 @@ function Home() {
           <img src={image} alt="more" className="work-image" />
           <div
             className="overlay more"
-            onClick={() => openInNewTab("/#/galleria")}
+            onClick={() => {
+              eventLog(location, "gallery_click", "click");
+              openInNewTab("/#/galleria");
+            }}
           >
             <div>
               You still haven't seen my full album
@@ -213,21 +219,19 @@ function Home() {
             <div className="book-form-container">
               <div className="form-input">
                 <div className="name">
-                  <label className="name-label">Your good name, If I may</label>
+                  <label className="name-label">Your Name</label>
                   <input className="form-input-name" />
                 </div>
                 <div className="mail">
-                  <label className="mail-label">And your Mail ID, Sire!!</label>
+                  <label className="mail-label">Mail ID</label>
                   <input className="form-input-mail" />
                 </div>
                 <div className="mail">
-                  <label className="mail-label">Phone Number, If you may</label>
+                  <label className="mail-label">Phone Number</label>
                   <input className="form-input-mail phone" />
                 </div>
                 <div className="content">
-                  <label className="content-label">
-                    Hope a new project awaits me!
-                  </label>
+                  <label className="content-label">Write a message</label>
                   <textarea className="form-input-content" />
                 </div>
                 <div className="button">
@@ -237,7 +241,7 @@ function Home() {
                       openMail();
                     }}
                   >
-                    Call a Pigeon 🐦
+                    Send Message 🐦
                   </button>
                 </div>
               </div>
