@@ -15,7 +15,7 @@ const getDeviceDetails = async () => {
     pixelDepth: window.screen.pixelDepth,
   };
 
-  const isMobile = /android|iphone|ipad|iPod/i.test(
+  const isMobile = /android|iphone|ipad|ipod/i.test(
     (navigator.userAgent || navigator.vendor || window.opera).toLowerCase()
   );
 
@@ -31,15 +31,28 @@ const getDeviceDetails = async () => {
       rtt: connection.rtt,
       saveData: connection.saveData,
     };
+  } else {
+    networkDetails = {
+      message: "Network information not supported on this device.",
+    };
   }
 
-  const battery = await navigator.getBattery();
-  const batteryDetails = {
-    level: battery.level * 100 + "%",
-    charging: battery.charging,
-    chargingTime: battery.chargingTime,
-    dischargingTime: battery.dischargingTime,
+  let batteryDetails = {
+    message: "Battery information not supported on this device.",
   };
+  if (navigator.getBattery) {
+    try {
+      const battery = await navigator.getBattery();
+      batteryDetails = {
+        level: battery.level * 100 + "%",
+        charging: battery.charging,
+        chargingTime: battery.chargingTime,
+        dischargingTime: battery.dischargingTime,
+      };
+    } catch (error) {
+      batteryDetails = { message: "Battery information retrieval failed." };
+    }
+  }
 
   const deviceDetails = {
     browserDetails,
