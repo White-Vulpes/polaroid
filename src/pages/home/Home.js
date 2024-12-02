@@ -23,6 +23,7 @@ function Home() {
   const [photos, setPhotos] = useState([]);
   const [thumbnails, setThumbnailPhotos] = useState([]);
   const { location } = useLocation();
+  const [sent, setSent] = useState("default");
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -82,15 +83,48 @@ function Home() {
   };
 
   const openMail = () => {
+    eventLog(location, "send_message", "button_click");
     const name = document.getElementsByClassName("form-input-name")[0].value;
     const mail = document.getElementsByClassName("form-input-mail")[0].value;
     const phone = document.getElementsByClassName("phone")[0].value;
     const content =
       document.getElementsByClassName("form-input-content")[0].value;
-
-    const subject = encodeURI(`I have a project for you, Ishita`);
-    const bd = encodeURI(`${content} \n\n${name}\n${mail}\n${phone}`);
-    window.location = `mailto:ishujphotography@gmail.com?subject=${subject}&body=${bd}`;
+    setSent("loading");
+    fetch("https://white-vulpes.hasura.app/v1/graphql", {
+      method: "POST",
+      headers: {
+        "x-hasura-role": "client",
+        "X-Hasura-Website-Id": "267b46d5-d330-478b-9a51-89af8bfb7528",
+      },
+      body: JSON.stringify({
+        query: `mutation MyMutation($website_id: uuid = "", $name: String = "", $message: String = "", $email: String = "", $phone: String = "", $heading: String = "", $logo: String = "", $sub_heading: String = "") {
+          insert_messages(objects: {website_id: $website_id, email: $email, message: $message, name: $name, phone: $phone}) {
+            affected_rows
+          }
+          insert_notifications(objects: {heading: $heading, logo: $logo, sub_heading: $sub_heading, website_id: $website_id}) {
+            affected_rows
+          }
+        }`,
+        variables: {
+          website_id: "267b46d5-d330-478b-9a51-89af8bfb7528",
+          name: name,
+          message: content,
+          email: mail,
+          phone: phone,
+          heading: `${name}`,
+          logo: "ic-notification-chat",
+          sub_heading: "has messaged you.",
+        },
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.errors) {
+          setSent("error");
+        } else {
+          setSent("success");
+        }
+      });
   };
 
   return loading ? (
@@ -241,7 +275,13 @@ function Home() {
                       openMail();
                     }}
                   >
-                    Send Message 🐦
+                    {sent === "success"
+                      ? "Success"
+                      : sent === "loading"
+                      ? "Loading...."
+                      : sent === "error"
+                      ? "Error"
+                      : "Send Message"}
                   </button>
                 </div>
               </div>

@@ -13,6 +13,8 @@ import {
 import PhotoAlbum from "react-photo-album";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import eventLog from "../../utils/eventsLogger";
+import { useLocation } from "../../providers/LocationContext";
 
 function Galleria() {
   const [loading, setLoading] = useState("");
@@ -20,6 +22,7 @@ function Galleria() {
   const [photos, setPhotos] = useState(null);
   const [thumbnails, setThumbnailPhotos] = useState(null);
   const navigate = useNavigate();
+  const { location } = useLocation();
 
   useEffect(() => {
     if (Cookies.get("getWelcomeShown") === undefined) {
@@ -172,6 +175,7 @@ function Galleria() {
 
   const handleOnClick = (e, id) => {
     if (loading !== id + "_done") {
+      eventLog(location, `${id.toLowerCase()}_click`, "click");
       e.preventDefault();
       let cards = document.querySelectorAll(".card");
       cards.forEach((card) => {
