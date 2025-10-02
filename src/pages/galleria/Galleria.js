@@ -1,16 +1,12 @@
 import "./Galleria.css";
 import "./Galleria-media.css";
 import Welcome from "../../components/Welcome/Welcome";
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox from "../../components/LightBox/LightBox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { useState, useEffect, useMemo } from "react";
-import {
-  Fullscreen,
-  Slideshow,
-  Zoom,
-} from "yet-another-react-lightbox/plugins";
-import PhotoAlbum from "react-photo-album";
+import React, { useState, useEffect, useMemo } from "react";
+import PhotoAlbum from "../../components/PhotoAlbum/PhotoAlbum";
+import "react-photo-album/columns.css";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import eventLog from "../../utils/eventsLogger";
@@ -18,7 +14,6 @@ import { useLocation } from "../../providers/LocationContext";
 
 function Galleria() {
   const [loading, setLoading] = useState("");
-  const [index, setIndex] = useState(-1);
   const [photos, setPhotos] = useState(null);
   const [thumbnails, setThumbnailPhotos] = useState(null);
   const navigate = useNavigate();
@@ -96,29 +91,8 @@ function Galleria() {
                 X
               </div>
             </div>
-            <div className="album-slideshow" onClick={() => setIndex(0)}>
-              <div className="album-slideshow-text">To View In Slideshow</div>
-              <div className="album-outline-text">CLICK ME!!</div>
-            </div>
-            <div className="album-photo">
-              <PhotoAlbum
-                photos={thumbnails}
-                layout="columns"
-                spacing={0.5}
-                columns={(columnWidth) => {
-                  if (columnWidth < 600) return 2;
-                }}
-                onClick={({ index }) => setIndex(index)}
-              />
-              <Lightbox
-                slides={photos}
-                open={index >= 0}
-                index={index}
-                close={() => setIndex(-1)}
-                carousel={{ padding: "0px" }}
-                plugins={[Fullscreen, Slideshow, Zoom]}
-              />
-            </div>
+            <Lightbox photos={photos}/>
+            <PhotoAlbum thumbnails={thumbnails}/>
           </div>
         </div>
       );

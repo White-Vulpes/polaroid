@@ -26,6 +26,7 @@ function Home() {
   const [sent, setSent] = useState("default");
 
   useEffect(() => {
+    console.log("Home Page View");
     const fetchPhotos = async () => {
       setLoading(true);
       try {
@@ -62,10 +63,9 @@ function Home() {
         }
         setThumbnailPhotos(thumb);
         setPhotos(photosX);
+        setTimeout(() => setLoading(false), 6000);
       } catch (error) {
         console.error("Failed to fetch photos:", error);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -177,9 +177,9 @@ function Home() {
         </div>
         <div className="home-spline">
           {window.innerWidth > 600 ? (
-            <Spline scene="https://prod.spline.design/5bJwyxvC60oRtSHb/scene.splinecode" />
+            <Spline scene="https://prod.spline.design/5bJwyxvC60oRtSHb/scene.splinecode"/>
           ) : (
-            <Spline scene="https://prod.spline.design/PcCe7m-tBQGuB9a9/scene.splinecode" />
+            <Spline scene="https://wvdashboard.s3.eu-north-1.amazonaws.com/mobile.splinecode" />
           )}
         </div>
       </div>

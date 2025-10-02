@@ -3,14 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { LocationProvider } from "./providers/LocationContext";
+import { LikesProvider } from "./providers/useLikes";
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <LocationProvider>
-      <App />
-    </LocationProvider>
+    <LikesProvider>
+      <LocationProvider>
+        <App />
+      </LocationProvider>
+    </LikesProvider>
   </React.StrictMode>
 );
 
